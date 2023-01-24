@@ -1,70 +1,18 @@
-# Getting Started with Create React App
+# Bookshelf
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ziel dieses Projekts ist die Entwicklung einer Website, auf der SchülerInnen schulintern Bücher, welche für den Unterricht angeschafft wurden, verkaufen können. 
 
-## Available Scripts
+## Ideen
 
-In the project directory, you can run:
+Bücher, die für die Schule gelesen (oder auch nicht gelesen) wurden, werden meistens nicht länger verwendet. Die Auswahl der Bücher ist auch in späteren Jahrgängen oft identisch oder ähnlich, weshalb sich ein digitaler Marktplatz dafür anbietet. So können die Bücher wiederverwendet werden, was nicht nur nachhaltig, sondern auch kostengünstiger ist. 
+Das Erstellen eines Accounts soll nicht notwendig sein, um Barrieren auch für jüngere SchülerInnen zu senken. Stattdessen wird beim Erstellen einer Anzeige eine E-Mail oder Handynummer angegeben, an die man sich wenden kann.
+Die Plattform nur schulintern zu halten bedeutet bessere Kontrolle und einfache Abwicklung, man bespricht in zwei Nachrichten einen Treffpunkt in der morgigen Pause. 
+Die Plattform wird möglichst über die SV, Lehrkräfte oder müngliche Überlieferung bekannt gemacht.
 
-### `npm start`
+## Technische Umsetzung und Details
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Die WebApp wird mit Hilfe von React erstellt. In einer Datenbank werden die Anzeigen gespeichert und verwaltet. Da eine Suchfunktion auf Google-Niveau nicht ohne weiteres implementiert werden kann, wird bei der Erstellung einer Anzeige die ISBN abgefragt und über eine API der korrekt geschriebene Buchtitel abgefragt. Suchen kann man dann nach ISBN oder dem (korrekt geschriebenen) Buchtitel (Suchverschläge sollen dies vereinfachen). Es ist alternativ möglich, für jedes Fach (Deutsch, Englisch, Spanisch, Französich) eine Übersicht der Bücher zu sehen, welche aktuell zum Verkauf stehen. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Bei der Erstellung einer Anzeige werden Kontaktinformation (E-Mail oder Handynummer), ISBN, Bilder, Name (des Verkaufenden), sowie eine kurze Beschreibung eingegeben. Auch dafür ist kein Benutzerkonto notwendig, auf Grund der überschaubaren Größe der Plattform werden Anzeigen vor der Veröffentlichung manuell geprüft (hoffentlich). Damit eine Anzeige als gelöscht/verkauft markiert werden kann, wird die "Macht" über die Anzeige in localStorage festgehalten (natürlich auch in der Datenbank zur Authentifikation).
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Eine mobile App ist nicht in Planung, vielleicht später mittels React Native (der Einfachheit halber).
