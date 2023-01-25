@@ -32,6 +32,7 @@ export class NavBar extends React.Component {
         return(
             <div className="navBar">
                 <Logo />
+                {/* Searchterm speicherung in localstorage?? */}
                 <SearchBar term={this.searchTerm} />
             </div>
         )
